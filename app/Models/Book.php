@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    protected $fillable = [
-        "title",
-        "author",
-        "synopsis",
-        "realease_data",
-        "comunity_note",
-    ];
+    protected $fillable = ["title", "author", "synopsis", "release_date"];
+
+    public function reviews(): hasMany
+    {
+        return $this->hasMany(Review::class);
+    }
 }
