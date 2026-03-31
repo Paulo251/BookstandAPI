@@ -1,8 +1,8 @@
 # Bookstand API
 
-API REST para gerenciamento de livros e avaliações, construída com Laravel 13, Laravel Sanctum e Laravel Sail.
+API REST para gerenciamento de livros e avaliações(inspirado no letterboxd), construída com Laravel 13, Laravel Sanctum e Laravel Sail.
 
-REST API for managing books and reviews, built with Laravel 13, Laravel Sanctum, and Laravel Sail.
+REST API for managing books and reviews(letterboxd inspired), built with Laravel 13, Laravel Sanctum, and Laravel Sail.
 
 ## Sumário / Table of Contents
 
@@ -137,8 +137,8 @@ Payload:
 
 ```json
 {
-  "name": "Paulo Silva",
-  "email": "paulo@example.com",
+  "name": "nome Silva",
+  "email": "email@example.com",
   "password": "password123"
 }
 ```
@@ -152,8 +152,8 @@ Resposta:
   "token": "1|token...",
   "user": {
     "id": 1,
-    "name": "Paulo Silva",
-    "email": "paulo@example.com",
+    "name": "nome",
+    "email": "email@example.com",
     "role_id": 1,
     "role": {
       "id": 1,
@@ -171,7 +171,7 @@ Payload:
 
 ```json
 {
-  "email": "paulo@example.com",
+  "email": "nome@example.com",
   "password": "password123"
 }
 ```
@@ -255,8 +255,8 @@ curl -X POST http://localhost/api/auth/register \
   -H "Accept: application/json" \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "Paulo Silva",
-    "email": "paulo@example.com",
+    "name": "nome Silva",
+    "email": "email@example.com",
     "password": "password123"
   }'
 ```
@@ -268,7 +268,7 @@ curl -X POST http://localhost/api/auth/login \
   -H "Accept: application/json" \
   -H "Content-Type: application/json" \
   -d '{
-    "email": "paulo@example.com",
+    "email": "nome@example.com",
     "password": "password123"
   }'
 ```
