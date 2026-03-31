@@ -15,8 +15,7 @@ return new class extends Migration {
             $table->string("title");
             $table->string("author");
             $table->longText("synopsis");
-            $table->date("release_date");
-            $table->integer("comunity_note")->nullable();
+            $table->integer("release_date");
             $table->timestamps();
         });
     }

@@ -26,7 +26,7 @@ class BooksRequest extends FormRequest
             "title" => "string|required",
             "author" => "string|required",
             "synopsis" => "string|required",
-            "release_date" => "date|required",
+            "release_date" => "integer|required",
         ];
     }
 }

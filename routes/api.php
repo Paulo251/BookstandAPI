@@ -16,10 +16,12 @@ Route::get("/auth/me", [AuthController::class, "me"])->middleware(
     "auth:sanctum",
 );
 
-// ----- livros ----- \\
-Route::get("/book", [BooksController::class, "index"]);
-Route::post("/book", [BooksController::class, "store"]);
+Route::middleware(["auth:sanctum"])->group(function () {
+    // ----- livros ----- \\
+    Route::get("/book", [BooksController::class, "index"]);
+    Route::post("/book", [BooksController::class, "store"])->middleware("admin");
 
-// ---- Reviews ---- \\
-Route::get("/review", [ReviewController::class, "index"]);
-Route::post("/review", [ReviewController::class, "store"]);
+    // ---- Reviews ---- \\
+    Route::get("/review", [ReviewController::class, "index"]);
+    Route::post("/review", [ReviewController::class, "store"]);
+});
